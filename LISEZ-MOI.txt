@@ -1,0 +1,18 @@
+IPSS — PWA de démarrage
+
+Fichiers :
+- index.html : interface du prototype
+- manifest.webmanifest : identité de l'application installable
+- service-worker.js : cache hors-ligne de base
+- icons/ : icônes 192px et 512px
+
+Publication :
+1. Héberger TOUS ces fichiers sur un site HTTPS.
+2. Vérifier que l'adresse du site s'ouvre en HTTPS.
+3. Ouvrir cette adresse dans Chrome Android.
+4. Menu ⋮ > Installer l'application (ou Ajouter à l'écran d'accueil).
+
+Important :
+- Cette version est encore une démonstration. Les réponses de l'assistant sont simulées.
+- Ne pas utiliser cette démo comme service d'urgence réel.
+- Pour générer un APK/AAB avec PWABuilder, le site doit être public en HTTPS et la configuration Android doit être faite ensuite.

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#05080f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<title>IPSS — IA Personnel</title>
+<style>
+:root{--bg:#05080f;--panel:#0c1422;--panel2:#101d31;--blue:#1687ff;--blue2:#55aaff;--txt:#f3f7ff;--muted:#9aabc2;--line:#1b2b43;--red:#ff5364}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#102d52 0,transparent 42%),var(--bg);color:var(--txt);font:16px system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 18px 12px;position:sticky;top:0;background:#05080fee;backdrop-filter:blur(12px);z-index:2;border-bottom:1px solid var(--line)}
+.brand{display:flex;gap:11px;align-items:center}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#0d3b70,#087eff);display:grid;place-items:center;font-weight:900;box-shadow:0 0 24px #1687ff55}.brand b{letter-spacing:2px}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px}
+button,input,select{font:inherit}button{border:0;cursor:pointer}.iconbtn{background:var(--panel2);color:var(--txt);border:1px solid var(--line);padding:10px 13px;border-radius:12px}
+main{max-width:760px;margin:auto;padding:20px 16px 105px}.eyebrow{color:var(--blue2);font-size:11px;letter-spacing:2px;font-weight:700}.hero{padding:22px 2px 18px}.hero h1{font-size:clamp(30px,7vw,44px);line-height:1.06;margin:10px 0}.hero p,.muted{color:var(--muted);line-height:1.55}.card{background:linear-gradient(145deg,#0e1a2c,#09111d);border:1px solid var(--line);border-radius:20px;padding:18px;margin:14px 0;box-shadow:0 12px 35px #0003}.actions{display:grid;grid-template-columns:1fr 1fr;gap:11px}.action{background:var(--panel2);border:1px solid var(--line);border-radius:16px;padding:16px;text-align:left;color:var(--txt);min-height:105px}.action strong{display:block;margin:8px 0 3px}.action small{color:var(--muted)}.primary{background:linear-gradient(100deg,#0875ef,#269aff);color:white;border-radius:14px;padding:14px 18px;font-weight:700;width:100%;box-shadow:0 8px 24px #0875ef35}.danger{background:#30131a;border:1px solid #71303a;color:#fff}.screen{display:none}.screen.active{display:block}.topline{display:flex;align-items:center;gap:10px;margin:8px 0 16px}.topline button{background:var(--panel2);color:white;border:1px solid var(--line);border-radius:10px;padding:9px 12px}.chatbox{height:min(52vh,460px);overflow:auto;display:flex;flex-direction:column;gap:10px;padding:12px;background:#070d17;border:1px solid var(--line);border-radius:16px}.msg{max-width:88%;padding:12px 14px;border-radius:15px;line-height:1.45}.bot{align-self:flex-start;background:#12233a;border:1px solid #1c3d61}.user{align-self:flex-end;background:#075dbb}.composer{display:flex;gap:8px;margin-top:10px}.composer input,.field{min-width:0;flex:1;background:#0a1422;border:1px solid var(--line);border-radius:13px;padding:13px;color:white}.composer button{background:var(--blue);color:white;border-radius:13px;padding:0 17px}.pill{display:inline-block;padding:6px 10px;border:1px solid #1d4771;color:#9dccff;border-radius:30px;font-size:12px}.emergency{border-color:#74313c;background:linear-gradient(145deg,#21121a,#100e17)}.emergency h2{color:#ff7884}.number{display:flex;justify-content:space-between;align-items:center;padding:14px;background:#0b1421;border:1px solid var(--line);border-radius:13px;margin:9px 0}.number b{font-size:20px}.number a{background:#163c65;color:white;padding:9px 13px;border-radius:10px;text-decoration:none}.notice{font-size:12px;color:var(--muted);line-height:1.5}.fieldwrap{margin:14px 0}.fieldwrap label{display:block;color:var(--muted);font-size:13px;margin-bottom:7px}.field{width:100%}nav{position:fixed;bottom:0;left:0;right:0;background:#070c15f2;backdrop-filter:blur(14px);border-top:1px solid var(--line);display:flex;justify-content:center;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));z-index:3}nav button{flex:1;max-width:170px;background:transparent;color:var(--muted);padding:9px 5px;border-radius:12px;font-size:12px}nav button.active{background:#102849;color:#8bc3ff}
+@media(min-width:600px){main{padding-top:30px}.actions{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header><div class="brand"><div class="logo">IP</div><div><b>IPSS</b><small>IA PERSONNEL</small></div></div><button class="iconbtn" onclick="show('settings')">⚙</button></header>
+<main>
+<section id="home" class="screen active">
+ <div class="hero"><div class="eyebrow">TON ESPACE PERSONNEL</div><h1>Tu peux en parler.<br><span style="color:var(--blue2)">À ton rythme.</span></h1><p>Un espace pour mettre des mots sur ce que tu ressens, prendre du recul et trouver une prochaine petite étape.</p><span class="pill">● Assistant prêt à discuter</span></div>
+ <div class="card"><div class="eyebrow">COMMENT ÇA VA AUJOURD'HUI ?</div><div class="actions" style="margin-top:13px">
+ <button class="action" onclick="startMood('Je me sens triste')">🌧️<strong>Triste</strong><small>J'ai besoin d'en parler</small></button>
+ <button class="action" onclick="startMood('Je ressens de la colère')">⚡<strong>En colère</strong><small>J'ai besoin de souffler</small></button>
+ <button class="action" onclick="startMood('Je me sens seul')">🌙<strong>Seul</strong><small>J'aimerais discuter</small></button>
+ <button class="action" onclick="show('chat')">💬<strong>Autre chose</strong><small>Je veux parler librement</small></button></div></div>
+ <div class="actions"><button class="action" onclick="show('chat')">✦<strong>Parler à IPSS</strong><small>Ouvrir une conversation</small></button><button class="action danger" onclick="show('emergency')">🛡️<strong>Mode urgence</strong><small>Accéder aux consignes de sécurité</small></button></div>
+ <p class="notice">IPSS est un outil de soutien, pas un professionnel de santé ni un service de secours. En cas de danger immédiat, contacte les services d'urgence.</p>
+</section>
+<section id="chat" class="screen">
+ <div class="topline"><button onclick="show('home')">←</button><div><b>Conversation IPSS</b><div class="notice">Un espace d'écoute sans jugement</div></div></div>
+ <div id="messages" class="chatbox"><div class="msg bot">Salut. Qu'est-ce qui se passe pour toi en ce moment ? Tu peux prendre ton temps. 💙</div></div>
+ <form class="composer" onsubmit="sendMsg(event)"><input id="message" autocomplete="off" placeholder="Écris ton message…" aria-label="Ton message"><button>➤</button></form>
+ <p class="notice">Prototype : les réponses sont simulées pour le moment. La connexion à une IA réelle sera ajoutée ensuite via un serveur sécurisé.</p>
+</section>
+<section id="emergency" class="screen">
+ <div class="topline"><button onclick="show('home')">←</button><b>Centre de sécurité</b></div>
+ <div class="card emergency"><div class="eyebrow" style="color:#ff8791">SI TU ES EN DANGER IMMÉDIAT</div><h2>Ta sécurité d'abord.</h2><p>Si tu peux le faire sans augmenter le danger, éloigne-toi de la menace, rejoins un lieu sûr et demande de l'aide à un adulte ou aux secours.</p></div>
+ <div class="card"><b>Numéros d'urgence en France</b>
+ <div class="number"><div><b>112</b><div class="notice">Urgence européenne</div></div><a href="tel:112">Appeler</a></div>
+ <div class="number"><div><b>17</b><div class="notice">Police / gendarmerie</div></div><a href="tel:17">Appeler</a></div>
+ <div class="number"><div><b>15</b><div class="notice">SAMU</div></div><a href="tel:15">Appeler</a></div>
+ <div class="number"><div><b>18</b><div class="notice">Sapeurs-pompiers</div></div><a href="tel:18">Appeler</a></div>
+ <div class="number"><div><b>114</b><div class="notice">Urgence par SMS / application, notamment si tu ne peux pas parler</div></div><a href="sms:114">SMS</a></div></div>
+ <div class="card"><b>Menace ou attaque à proximité</b><p class="muted">Ne cherche pas à intervenir ni à t'approcher. Si tu peux le faire sans danger, éloigne-toi de la zone. Sinon, mets-toi à l'abri, reste discret, éloigne-toi des fenêtres et suis les instructions des autorités. Contacte les secours dès que tu peux le faire en sécurité.</p></div>
+ <p class="notice">Ces informations sont générales et ne remplacent jamais les consignes des autorités présentes sur place. Les appels et SMS ne sont envoyés qu'après ton action.</p>
+</section>
+<section id="settings" class="screen">
+ <div class="topline"><button onclick="show('home')">←</button><b>Paramètres</b></div>
+ <div class="card"><div class="eyebrow">DURÉE D'ACCOMPAGNEMENT</div><p class="muted">Choisis pendant combien de temps tu souhaites utiliser ton espace IPSS.</p>
+ <div class="fieldwrap"><label for="duration">Durée</label><select class="field" id="duration"><option>1 heure</option><option selected>Toute la journée</option><option>1 mois</option><option>1 an</option></select></div>
+ <button class="primary" onclick="saveSettings()">Enregistrer la préférence</button><p id="saved" class="notice"></p></div>
+ <div class="card"><b>Confidentialité</b><p class="muted">Dans cette version de démonstration, les messages restent dans la page et ne sont pas envoyés à un service IA. Avant la version finale, nous ajouterons une politique de confidentialité, une suppression des données et une protection adaptée.</p></div>
+</section>
+</main>
+<nav><button class="active" data-page="home" onclick="show('home')">⌂<br>Accueil</button><button data-page="chat" onclick="show('chat')">✦<br>Assistant</button><button data-page="emergency" onclick="show('emergency')">🛡<br>Urgence</button><button data-page="settings" onclick="show('settings')">⚙<br>Réglages</button></nav>
+<script>
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));window.scrollTo(0,0)}
+function startMood(m){show('chat');addMsg(m,'user');setTimeout(()=>addMsg("Merci de me le dire. Tu n'as pas besoin de tout expliquer d'un coup. Qu'est-ce qui te pèse le plus maintenant ?",'bot'),250)}
+function addMsg(t,who){const d=document.createElement('div');d.className='msg '+who;d.textContent=t;const box=document.getElementById('messages');box.appendChild(d);box.scrollTop=box.scrollHeight}
+function sendMsg(e){e.preventDefault();const i=document.getElementById('message');const t=i.value.trim();if(!t)return;i.value='';addMsg(t,'user');setTimeout(()=>{let r="Je t'écoute. Qu'est-ce qui pourrait t'aider un tout petit peu, là, maintenant ?";if(/colère|énerv|rage/i.test(t))r="Ça a l'air intense. Si tu peux, éloigne-toi quelques instants de la situation et prends une respiration lente. Qu'est-ce qui a déclenché cette colère ?";if(/seul|personne/i.test(t))r="Se sentir seul peut être vraiment lourd. Est-ce qu'il y a quelqu'un de confiance à qui tu pourrais envoyer un petit message aujourd'hui ?";if(/triste|pleur|mal/i.test(t))r="Je suis désolé que ce soit difficile. Tu peux m'en parler à ton rythme. Depuis quand tu te sens comme ça ?";addMsg(r,'bot')},350)}
+function saveSettings(){document.getElementById('saved').textContent='Préférence enregistrée pour cette démonstration : '+document.getElementById('duration').value+'.'}
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("service-worker.js").catch(()=>{}));
+}
+</script>
+</body></html>
